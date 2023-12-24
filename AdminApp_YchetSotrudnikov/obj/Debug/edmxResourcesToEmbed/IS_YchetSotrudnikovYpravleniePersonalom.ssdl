@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище IS_YchetSotrudnikovYpravleniePersonalomModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="ID_Department" />
+    </Key>
+    <Property Name="ID_Department" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_departament" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Education">
+    <Key>
+      <PropertyRef Name="ID_Education" />
+    </Key>
+    <Property Name="ID_Education" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type_of_education" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Specialization" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Institution" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Education_employe">
+    <Key>
+      <PropertyRef Name="ID_Education_employe" />
+    </Key>
+    <Property Name="ID_Education_employe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Education_ID" Type="int" Nullable="false" />
+    <Property Name="Employe_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employe">
+    <Key>
+      <PropertyRef Name="ID_Employe" />
+    </Key>
+    <Property Name="ID_Employe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SOLI" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Last_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Middle_name" Type="varchar" MaxLength="50" />
+    <Property Name="Date_of_employment" Type="date" Nullable="false" />
+    <Property Name="Login" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone_number" Type="varchar" MaxLength="17" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employe_Tasks">
+    <Key>
+      <PropertyRef Name="ID_Employe_tasks" />
+    </Key>
+    <Property Name="ID_Employe_tasks" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tasks_ID" Type="int" Nullable="false" />
+    <Property Name="Employe_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="History_tasks">
+    <Key>
+      <PropertyRef Name="ID_History_tasks" />
+    </Key>
+    <Property Name="ID_History_tasks" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Сompleted" Type="bit" Nullable="false" />
+    <Property Name="On_time" Type="bit" Nullable="false" />
+    <Property Name="Tasks_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LogTable">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LogDateTime" Type="datetime" Nullable="false" />
+    <Property Name="LogEventType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LogMessage" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="ID_Post" />
+    </Key>
+    <Property Name="ID_Post" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_post" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Department_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Post_Employe">
+    <Key>
+      <PropertyRef Name="ID_Post_employe" />
+    </Key>
+    <Property Name="ID_Post_employe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Post_ID" Type="int" Nullable="false" />
+    <Property Name="Employe_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sallary">
+    <Key>
+      <PropertyRef Name="ID_Sallary" />
+    </Key>
+    <Property Name="ID_Sallary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Post_Employe_ID" Type="int" Nullable="false" />
+    <Property Name="Sick_ID" Type="int" Nullable="false" />
+    <Property Name="Stake_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sick">
+    <Key>
+      <PropertyRef Name="ID_Sick" />
+    </Key>
+    <Property Name="ID_Sick" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ill" Type="bit" Nullable="false" />
+    <Property Name="Sick_for_days" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Stake">
+    <Key>
+      <PropertyRef Name="ID_Stake" />
+    </Key>
+    <Property Name="ID_Stake" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Count_days_worked" Type="int" Nullable="false" />
+    <Property Name="Payment_per_day" Type="float" Nullable="false" />
+    <Property Name="Date_of_salary" Type="date" Nullable="false" />
+    <Property Name="Payment per shift" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tasks">
+    <Key>
+      <PropertyRef Name="ID_Tasks" />
+    </Key>
+    <Property Name="ID_Tasks" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Topic" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Complexity" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date_of_issue" Type="date" Nullable="false" />
+    <Property Name="Date_of_end" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Type_day">
+    <Key>
+      <PropertyRef Name="ID_Type_day" />
+    </Key>
+    <Property Name="ID_Type_day" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type_of_day" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Work_schedule">
+    <Key>
+      <PropertyRef Name="ID_Work_schedule" />
+    </Key>
+    <Property Name="ID_Work_schedule" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Day" Type="date" Nullable="false" />
+    <Property Name="Time_start_working_day" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Time_end_working_day" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Full_time" Type="bit" Nullable="false" />
+    <Property Name="Available_places" Type="int" Nullable="false" />
+    <Property Name="break" Type="int" Nullable="false" />
+    <Property Name="Type_day_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Work_schedule_Employe">
+    <Key>
+      <PropertyRef Name="ID_Work_schedule_employe" />
+    </Key>
+    <Property Name="ID_Work_schedule_employe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Work_schedule_ID" Type="int" Nullable="false" />
+    <Property Name="Employe_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Education_education_employe">
+    <End Role="Education" Type="Self.Education" Multiplicity="1" />
+    <End Role="Education_employe" Type="Self.Education_employe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Education">
+        <PropertyRef Name="ID_Education" />
+      </Principal>
+      <Dependent Role="Education_employe">
+        <PropertyRef Name="Education_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employe_Education_employe">
+    <End Role="Employe" Type="Self.Employe" Multiplicity="1" />
+    <End Role="Education_employe" Type="Self.Education_employe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employe">
+        <PropertyRef Name="ID_Employe" />
+      </Principal>
+      <Dependent Role="Education_employe">
+        <PropertyRef Name="Employe_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employe_employe_tasks">
+    <End Role="Employe" Type="Self.Employe" Multiplicity="1" />
+    <End Role="Employe_Tasks" Type="Self.Employe_Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employe">
+        <PropertyRef Name="ID_Employe" />
+      </Principal>
+      <Dependent Role="Employe_Tasks">
+        <PropertyRef Name="Employe_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employe_post_employe">
+    <End Role="Employe" Type="Self.Employe" Multiplicity="1" />
+    <End Role="Post_Employe" Type="Self.Post_Employe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employe">
+        <PropertyRef Name="ID_Employe" />
+      </Principal>
+      <Dependent Role="Post_Employe">
+        <PropertyRef Name="Employe_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employe_work_schedule">
+    <End Role="Employe" Type="Self.Employe" Multiplicity="1" />
+    <End Role="Work_schedule_Employe" Type="Self.Work_schedule_Employe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employe">
+        <PropertyRef Name="ID_Employe" />
+      </Principal>
+      <Dependent Role="Work_schedule_Employe">
+        <PropertyRef Name="Employe_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Post_department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="Post" Type="Self.Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="ID_Department" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="Department_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Post_Employe_sallary">
+    <End Role="Post_Employe" Type="Self.Post_Employe" Multiplicity="1" />
+    <End Role="Sallary" Type="Self.Sallary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post_Employe">
+        <PropertyRef Name="ID_Post_employe" />
+      </Principal>
+      <Dependent Role="Sallary">
+        <PropertyRef Name="Post_Employe_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Post_post_employe">
+    <End Role="Post" Type="Self.Post" Multiplicity="1" />
+    <End Role="Post_Employe" Type="Self.Post_Employe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="ID_Post" />
+      </Principal>
+      <Dependent Role="Post_Employe">
+        <PropertyRef Name="Post_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sick_sallary">
+    <End Role="Sick" Type="Self.Sick" Multiplicity="1" />
+    <End Role="Sallary" Type="Self.Sallary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sick">
+        <PropertyRef Name="ID_Sick" />
+      </Principal>
+      <Dependent Role="Sallary">
+        <PropertyRef Name="Sick_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stake_sallary">
+    <End Role="Stake" Type="Self.Stake" Multiplicity="1" />
+    <End Role="Sallary" Type="Self.Sallary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stake">
+        <PropertyRef Name="ID_Stake" />
+      </Principal>
+      <Dependent Role="Sallary">
+        <PropertyRef Name="Stake_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tasks_employe_tasks">
+    <End Role="Tasks" Type="Self.Tasks" Multiplicity="1" />
+    <End Role="Employe_Tasks" Type="Self.Employe_Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tasks">
+        <PropertyRef Name="ID_Tasks" />
+      </Principal>
+      <Dependent Role="Employe_Tasks">
+        <PropertyRef Name="Tasks_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tasks_history_tasks">
+    <End Role="Tasks" Type="Self.Tasks" Multiplicity="1" />
+    <End Role="History_tasks" Type="Self.History_tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tasks">
+        <PropertyRef Name="ID_Tasks" />
+      </Principal>
+      <Dependent Role="History_tasks">
+        <PropertyRef Name="Tasks_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Type_day_work_schedule">
+    <End Role="Type_day" Type="Self.Type_day" Multiplicity="1" />
+    <End Role="Work_schedule" Type="Self.Work_schedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type_day">
+        <PropertyRef Name="ID_Type_day" />
+      </Principal>
+      <Dependent Role="Work_schedule">
+        <PropertyRef Name="Type_day_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Work_schedule_work_schedule_Employe">
+    <End Role="Work_schedule" Type="Self.Work_schedule" Multiplicity="1" />
+    <End Role="Work_schedule_Employe" Type="Self.Work_schedule_Employe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Work_schedule">
+        <PropertyRef Name="ID_Work_schedule" />
+      </Principal>
+      <Dependent Role="Work_schedule_Employe">
+        <PropertyRef Name="Work_schedule_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище IS_YchetSotrudnikovYpravleniePersonalomModelContainer">
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Education_employe" EntityType="Self.Education_employe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employe" EntityType="Self.Employe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employe_Tasks" EntityType="Self.Employe_Tasks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="History_tasks" EntityType="Self.History_tasks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogTable" EntityType="Self.LogTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Post_Employe" EntityType="Self.Post_Employe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sallary" EntityType="Self.Sallary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sick" EntityType="Self.Sick" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stake" EntityType="Self.Stake" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tasks" EntityType="Self.Tasks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Type_day" EntityType="Self.Type_day" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Work_schedule" EntityType="Self.Work_schedule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Work_schedule_Employe" EntityType="Self.Work_schedule_Employe" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Education_education_employe" Association="Self.FK_Education_education_employe">
+      <End Role="Education" EntitySet="Education" />
+      <End Role="Education_employe" EntitySet="Education_employe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employe_Education_employe" Association="Self.FK_Employe_Education_employe">
+      <End Role="Employe" EntitySet="Employe" />
+      <End Role="Education_employe" EntitySet="Education_employe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employe_employe_tasks" Association="Self.FK_Employe_employe_tasks">
+      <End Role="Employe" EntitySet="Employe" />
+      <End Role="Employe_Tasks" EntitySet="Employe_Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employe_post_employe" Association="Self.FK_Employe_post_employe">
+      <End Role="Employe" EntitySet="Employe" />
+      <End Role="Post_Employe" EntitySet="Post_Employe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employe_work_schedule" Association="Self.FK_Employe_work_schedule">
+      <End Role="Employe" EntitySet="Employe" />
+      <End Role="Work_schedule_Employe" EntitySet="Work_schedule_Employe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Post_department" Association="Self.FK_Post_department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Post" EntitySet="Post" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Post_Employe_sallary" Association="Self.FK_Post_Employe_sallary">
+      <End Role="Post_Employe" EntitySet="Post_Employe" />
+      <End Role="Sallary" EntitySet="Sallary" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Post_post_employe" Association="Self.FK_Post_post_employe">
+      <End Role="Post" EntitySet="Post" />
+      <End Role="Post_Employe" EntitySet="Post_Employe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sick_sallary" Association="Self.FK_Sick_sallary">
+      <End Role="Sick" EntitySet="Sick" />
+      <End Role="Sallary" EntitySet="Sallary" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stake_sallary" Association="Self.FK_Stake_sallary">
+      <End Role="Stake" EntitySet="Stake" />
+      <End Role="Sallary" EntitySet="Sallary" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tasks_employe_tasks" Association="Self.FK_Tasks_employe_tasks">
+      <End Role="Tasks" EntitySet="Tasks" />
+      <End Role="Employe_Tasks" EntitySet="Employe_Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tasks_history_tasks" Association="Self.FK_Tasks_history_tasks">
+      <End Role="Tasks" EntitySet="Tasks" />
+      <End Role="History_tasks" EntitySet="History_tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Type_day_work_schedule" Association="Self.FK_Type_day_work_schedule">
+      <End Role="Type_day" EntitySet="Type_day" />
+      <End Role="Work_schedule" EntitySet="Work_schedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Work_schedule_work_schedule_Employe" Association="Self.FK_Work_schedule_work_schedule_Employe">
+      <End Role="Work_schedule" EntitySet="Work_schedule" />
+      <End Role="Work_schedule_Employe" EntitySet="Work_schedule_Employe" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

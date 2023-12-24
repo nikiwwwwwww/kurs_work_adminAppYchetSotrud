@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище IS_YchetSotrudnikovYpravleniePersonalomModelContainer" CdmEntityContainer="IS_YchetSotrudnikovYpravleniePersonalomEntities">
+    <EntitySetMapping Name="Department">
+      <EntityTypeMapping TypeName="IS_YchetSotrudnikovYpravleniePersonalomModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="ID_Department" ColumnName="ID_Department" />
+          <ScalarProperty Name="Name_departament" ColumnName="Name_departament" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Education">
+      <EntityTypeMapping TypeName="IS_YchetSotrudnikovYpravleniePersonalomModel.Education">
+        <MappingFragment StoreEntitySet="Education">
+          <ScalarProperty Name="ID_Education" ColumnName="ID_Education" />
+          <ScalarProperty Name="Type_of_education" ColumnName="Type_of_education" />
+          <ScalarProperty Name="Specialization" ColumnName="Specialization" />
+          <ScalarProperty Name="Institution" ColumnName="Institution" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Education_employe">
+      <EntityTypeMapping TypeName="IS_YchetSotrudnikovYpravleniePersonalomModel.Education_employe">
+        <MappingFragment StoreEntitySet="Education_employe">
+          <ScalarProperty Name="ID_Education_employe" ColumnName="ID_Education_employe" />
+          <ScalarProperty Name="Education_ID" ColumnName="Education_ID" />
+          <ScalarProperty Name="Employe_ID" ColumnName="Employe_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employe">
+      <EntityTypeMapping TypeName="IS_YchetSotrudnikovYpravleniePersonalomModel.Employe">
+        <MappingFragment StoreEntitySet="Employe">
+          <ScalarProperty Name="ID_Employe" ColumnName="ID_Employe" />
+          <ScalarProperty Name="SOLI" ColumnName="SOLI" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Last_name" ColumnName="Last_name" />
+          <ScalarProperty Name="Middle_name" ColumnName="Middle_name" />
+          <ScalarProperty Name="Date_of_employment" ColumnName="Date_of_employment" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Phone_number" ColumnName="Phone_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employe_Tasks">
+      <EntityTypeMapping TypeName="IS_YchetSotrudnikovYpravleniePersonalomModel.Employe_Tasks">
+        <MappingFragment StoreEntitySet="Employe_Tasks">
+          <ScalarProperty Name="ID_Employe_tasks" ColumnName="ID_Employe_tasks" />
+          <ScalarProperty Name="Tasks_ID" ColumnName="Tasks_ID" />
+          <ScalarProperty Name="Employe_ID" ColumnName="Employe_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="History_tasks">
+      <EntityTypeMapping TypeName="IS_YchetSotrudnikovYpravleniePersonalomModel.History_tasks">
+        <MappingFragment StoreEntitySet="History_tasks">
+          <ScalarProperty Name="ID_History_tasks" ColumnName="ID_History_tasks" />
+          <ScalarProperty Name="Сompleted" ColumnName="Сompleted" />
+          <ScalarProperty Name="On_time" ColumnName="On_time" />
+          <ScalarProperty Name="Tasks_ID" ColumnName="Tasks_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogTable">
+      <EntityTypeMapping TypeName="IS_YchetSotrudnikovYpravleniePersonalomModel.LogTable">
+        <MappingFragment StoreEntitySet="LogTable">
+          <ScalarProperty Name="LogID" ColumnName="LogID" />
+          <ScalarProperty Name="LogDateTime" ColumnName="LogDateTime" />
+          <ScalarProperty Name="LogEventType" ColumnName="LogEventType" />
+          <ScalarProperty Name="LogMessage" ColumnName="LogMessage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Post">
+      <EntityTypeMapping TypeName="IS_YchetSotrudnikovYpravleniePersonalomModel.Post">
+        <MappingFragment StoreEntitySet="Post">
+          <ScalarProperty Name="ID_Post" ColumnName="ID_Post" />
+          <ScalarProperty Name="Name_post" ColumnName="Name_post" />
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Post_Employe">
+      <EntityTypeMapping TypeName="IS_YchetSotrudnikovYpravleniePersonalomModel.Post_Employe">
+        <MappingFragment StoreEntitySet="Post_Employe">
+          <ScalarProperty Name="ID_Post_employe" ColumnName="ID_Post_employe" />
+          <ScalarProperty Name="Post_ID" ColumnName="Post_ID" />
+          <ScalarProperty Name="Employe_ID" ColumnName="Employe_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sallary">
+      <EntityTypeMapping TypeName="IS_YchetSotrudnikovYpravleniePersonalomModel.Sallary">
+        <MappingFragment StoreEntitySet="Sallary">
+          <ScalarProperty Name="ID_Sallary" ColumnName="ID_Sallary" />
+          <ScalarProperty Name="Post_Employe_ID" ColumnName="Post_Employe_ID" />
+          <ScalarProperty Name="Sick_ID" ColumnName="Sick_ID" />
+          <ScalarProperty Name="Stake_ID" ColumnName="Stake_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sick">
+      <EntityTypeMapping TypeName="IS_YchetSotrudnikovYpravleniePersonalomModel.Sick">
+        <MappingFragment StoreEntitySet="Sick">
+          <ScalarProperty Name="ID_Sick" ColumnName="ID_Sick" />
+          <ScalarProperty Name="Ill" ColumnName="Ill" />
+          <ScalarProperty Name="Sick_for_days" ColumnName="Sick_for_days" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stake">
+      <EntityTypeMapping TypeName="IS_YchetSotrudnikovYpravleniePersonalomModel.Stake">
+        <MappingFragment StoreEntitySet="Stake">
+          <ScalarProperty Name="ID_Stake" ColumnName="ID_Stake" />
+          <ScalarProperty Name="Count_days_worked" ColumnName="Count_days_worked" />
+          <ScalarProperty Name="Payment_per_day" ColumnName="Payment_per_day" />
+          <ScalarProperty Name="Date_of_salary" ColumnName="Date_of_salary" />
+          <ScalarProperty Name="Payment_per_shift" ColumnName="Payment per shift" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tasks">
+      <EntityTypeMapping TypeName="IS_YchetSotrudnikovYpravleniePersonalomModel.Tasks">
+        <MappingFragment StoreEntitySet="Tasks">
+          <ScalarProperty Name="ID_Tasks" ColumnName="ID_Tasks" />
+          <ScalarProperty Name="Topic" ColumnName="Topic" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Complexity" ColumnName="Complexity" />
+          <ScalarProperty Name="Date_of_issue" ColumnName="Date_of_issue" />
+          <ScalarProperty Name="Date_of_end" ColumnName="Date_of_end" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Type_day">
+      <EntityTypeMapping TypeName="IS_YchetSotrudnikovYpravleniePersonalomModel.Type_day">
+        <MappingFragment StoreEntitySet="Type_day">
+          <ScalarProperty Name="ID_Type_day" ColumnName="ID_Type_day" />
+          <ScalarProperty Name="Type_of_day" ColumnName="Type_of_day" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Work_schedule">
+      <EntityTypeMapping TypeName="IS_YchetSotrudnikovYpravleniePersonalomModel.Work_schedule">
+        <MappingFragment StoreEntitySet="Work_schedule">
+          <ScalarProperty Name="ID_Work_schedule" ColumnName="ID_Work_schedule" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Time_start_working_day" ColumnName="Time_start_working_day" />
+          <ScalarProperty Name="Time_end_working_day" ColumnName="Time_end_working_day" />
+          <ScalarProperty Name="Full_time" ColumnName="Full_time" />
+          <ScalarProperty Name="Available_places" ColumnName="Available_places" />
+          <ScalarProperty Name="break" ColumnName="break" />
+          <ScalarProperty Name="Type_day_ID" ColumnName="Type_day_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Work_schedule_Employe">
+      <EntityTypeMapping TypeName="IS_YchetSotrudnikovYpravleniePersonalomModel.Work_schedule_Employe">
+        <MappingFragment StoreEntitySet="Work_schedule_Employe">
+          <ScalarProperty Name="ID_Work_schedule_employe" ColumnName="ID_Work_schedule_employe" />
+          <ScalarProperty Name="Work_schedule_ID" ColumnName="Work_schedule_ID" />
+          <ScalarProperty Name="Employe_ID" ColumnName="Employe_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

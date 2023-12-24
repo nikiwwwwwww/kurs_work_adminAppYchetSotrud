@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="42e90d022dc84c2dbf0eed4d667a085c" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="IS_YchetSotrudnikovYpravleniePersonalomModel.Department" Width="1.5" PointX="1.5" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IS_YchetSotrudnikovYpravleniePersonalomModel.Education" Width="1.5" PointX="0.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IS_YchetSotrudnikovYpravleniePersonalomModel.Education_employe" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IS_YchetSotrudnikovYpravleniePersonalomModel.Employe" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IS_YchetSotrudnikovYpravleniePersonalomModel.Employe_Tasks" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IS_YchetSotrudnikovYpravleniePersonalomModel.History_tasks" Width="1.5" PointX="3" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IS_YchetSotrudnikovYpravleniePersonalomModel.LogTable" Width="1.5" PointX="5.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IS_YchetSotrudnikovYpravleniePersonalomModel.Post" Width="1.5" PointX="0.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IS_YchetSotrudnikovYpravleniePersonalomModel.Post_Employe" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="IS_YchetSotrudnikovYpravleniePersonalomModel.Sallary" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IS_YchetSotrudnikovYpravleniePersonalomModel.Sick" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IS_YchetSotrudnikovYpravleniePersonalomModel.Stake" Width="1.5" PointX="3" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IS_YchetSotrudnikovYpravleniePersonalomModel.Tasks" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IS_YchetSotrudnikovYpravleniePersonalomModel.Type_day" Width="1.5" PointX="1.5" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IS_YchetSotrudnikovYpravleniePersonalomModel.Work_schedule" Width="1.5" PointX="3.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IS_YchetSotrudnikovYpravleniePersonalomModel.Work_schedule_Employe" Width="1.5" PointX="6" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="IS_YchetSotrudnikovYpravleniePersonalomModel.FK_Post_department" ManuallyRouted="false" />
+        <AssociationConnector Association="IS_YchetSotrudnikovYpravleniePersonalomModel.FK_Education_education_employe" ManuallyRouted="false" />
+        <AssociationConnector Association="IS_YchetSotrudnikovYpravleniePersonalomModel.FK_Employe_Education_employe" ManuallyRouted="false" />
+        <AssociationConnector Association="IS_YchetSotrudnikovYpravleniePersonalomModel.FK_Employe_employe_tasks" ManuallyRouted="false" />
+        <AssociationConnector Association="IS_YchetSotrudnikovYpravleniePersonalomModel.FK_Employe_post_employe" ManuallyRouted="false" />
+        <AssociationConnector Association="IS_YchetSotrudnikovYpravleniePersonalomModel.FK_Employe_work_schedule" ManuallyRouted="false" />
+        <AssociationConnector Association="IS_YchetSotrudnikovYpravleniePersonalomModel.FK_Tasks_employe_tasks" ManuallyRouted="false" />
+        <AssociationConnector Association="IS_YchetSotrudnikovYpravleniePersonalomModel.FK_Tasks_history_tasks" ManuallyRouted="false" />
+        <AssociationConnector Association="IS_YchetSotrudnikovYpravleniePersonalomModel.FK_Post_post_employe" ManuallyRouted="false" />
+        <AssociationConnector Association="IS_YchetSotrudnikovYpravleniePersonalomModel.FK_Post_Employe_sallary" ManuallyRouted="false" />
+        <AssociationConnector Association="IS_YchetSotrudnikovYpravleniePersonalomModel.FK_Sick_sallary" ManuallyRouted="false" />
+        <AssociationConnector Association="IS_YchetSotrudnikovYpravleniePersonalomModel.FK_Stake_sallary" ManuallyRouted="false" />
+        <AssociationConnector Association="IS_YchetSotrudnikovYpravleniePersonalomModel.FK_Type_day_work_schedule" ManuallyRouted="false" />
+        <AssociationConnector Association="IS_YchetSotrudnikovYpravleniePersonalomModel.FK_Work_schedule_work_schedule_Employe" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
